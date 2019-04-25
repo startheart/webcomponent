@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    div {
+      display: flex; 
+      font-size: 30px; /*不会影响Shadow DOM*/
+    }
+    #tabs {
+      color: red; /*不会影响Shadow DOM*/
+      font-size: 20px;
+    }
+    #income {
+      display: flex; /*会影响Shadow DOM的子项*/
+      flex-direction: column; /*会影响Shadow DOM的子项*/
+      width: 400px;
+      color: red; /*会被Shadow DOM继承*/
+      font-size: 20px; /*会被Shadow DOM继承*/
+      border: 1px solid black;
+    }
+  </style>
+  <title>ShadowDOM</title>
+</head>
+<body>
+  <div id="root">
+      <fancy-tabs id="income"></fancy-tabs>
+  </div>
+<script type="text/javascript" >
+// Use custom elements API v1 to register a new HTML tag and define its JS behavior
+// using an ES6 class. Every instance of <fancy-tab> will have this same prototype.
+customElements.define('fancy-tabs', class extends HTMLElement {
+  constructor() {
+    super(); // always call super() first in the constructor.
+
+    // Attach a shadow root to <fancy-tabs>.
+    const shadowRoot = this.attachShadow({mode: 'open'});
+    shadowRoot.innerHTML = `
+      <style>
+        #tabs { 
+          align-self: center;
+        }
+        :host {
+          font-weight: 600; /* 作用于宿主元素*/
+        }
+      </style>
+      <!-- styles are scoped to fancy-tabs! -->
+      <div id="tabs">tab item</div>
+      <div id="panels">tab panel</div>
+    `;
+  }
+});
+
+</script>
+</body>
+</html>
