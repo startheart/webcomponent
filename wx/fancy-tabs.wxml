@@ -1,0 +1,8 @@
+<!--fancy-tabs.wxml-->
+<view class="wrap">
+  <view id="tabs">
+    <slot></slot>
+  </view>
+  <view id="panels" bindtap="click">tab panel</view>
+</view>
+

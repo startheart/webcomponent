@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "fancy-tabs": "../../components/fancy-tabs/fancy-tabs"
+  }
+}

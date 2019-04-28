@@ -7,13 +7,13 @@
   <style>
     div {
       display: flex; 
-      font-size: 30px; /*不会影响Shadow DOM*/
+      font-size: 24px; /*不会影响Shadow DOM*/
     }
     #tabs {
       color: red; /*不会影响Shadow DOM*/
-      font-size: 20px;
+      font-size: 18px;
     }
-    #income {
+    #fancy-tabs {
       display: flex; /*会影响Shadow DOM的子项*/
       flex-direction: column; /*会影响Shadow DOM的子项*/
       width: 400px;
@@ -26,9 +26,22 @@
 </head>
 <body>
   <div id="root">
-      <fancy-tabs id="income"></fancy-tabs>
+      <fancy-tabs id="fancy-tabs">
+        <div>slot内容</div>
+      </fancy-tabs>
   </div>
 <script type="text/javascript" >
+const fancyTabs = document.querySelector('#fancy-tabs');
+// 绑定原生事件
+fancyTabs.addEventListener('click', e => {
+  console.log('【<fancy-tabs/> origin click event handler】', e)
+});
+
+// 绑定自定义事件
+fancyTabs.addEventListener('myevent', e => {
+  console.log('【<fancy-tabs/> custom event handler】', e)
+});
+
 // Use custom elements API v1 to register a new HTML tag and define its JS behavior
 // using an ES6 class. Every instance of <fancy-tab> will have this same prototype.
 customElements.define('fancy-tabs', class extends HTMLElement {
@@ -39,17 +52,33 @@ customElements.define('fancy-tabs', class extends HTMLElement {
     const shadowRoot = this.attachShadow({mode: 'open'});
     shadowRoot.innerHTML = `
       <style>
+        .wrap {
+          flex-direction: column;
+        }
         #tabs { 
           align-self: center;
         }
         :host {
-          font-weight: 600; /* 作用于宿主元素*/
+          font-weight: 100; /* 作用于宿主元素*/
+        }
+        #panels {
+          color: green;
+          font-size: 12px;
         }
       </style>
       <!-- styles are scoped to fancy-tabs! -->
-      <div id="tabs">tab item</div>
-      <div id="panels">tab panel</div>
+      <div class="wrap">
+        <div id="tabs">
+          <slot></slot>
+        </div>
+        <div id="panels">tab panel</div>
+      </div>
     `;
+
+    const panels = shadowRoot.querySelector('#panels');
+    panels.addEventListener('click', e => {
+      panels.dispatchEvent(new Event('myevent', {bubbles: true, composed: true}));
+    });
   }
 });
 
