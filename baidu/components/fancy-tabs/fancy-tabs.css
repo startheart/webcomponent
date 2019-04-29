@@ -1,0 +1,14 @@
+/* fancy-tabs.wxss */
+.wrap {
+  flex-direction: column;
+}
+.tabs { 
+  align-self: center;
+}
+:host {
+  font-weight: 100; /* 作用于宿主元素*/
+}
+.panels {
+  color: green;
+  font-size: 12px;
+}

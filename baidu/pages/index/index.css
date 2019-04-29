@@ -1,0 +1,16 @@
+view {
+  display: flex; 
+  font-size: 24px; /*不会影响Shadow DOM*/
+}
+#tabs {
+  color: red; /*不会影响Shadow DOM*/
+  font-size: 18px;
+}
+#fancy-tabs {
+  display: flex; /*会影响Shadow DOM的子项*/
+  flex-direction: column; /*会影响Shadow DOM的子项*/
+  width: 400px;
+  color: red; /*会被Shadow DOM继承*/
+  font-size: 20px; /*会被Shadow DOM继承*/
+  border: 1px solid black;
+}
