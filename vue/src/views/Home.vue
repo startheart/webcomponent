@@ -38,7 +38,7 @@ div {
   /*会影响自定义组件的子项*/
   display: flex; 
   flex-direction: column;
-  width: 400px;
+  width: 300px;
   /*会被自定义组件继承*/
   color: red; 
   font-size: 20px;

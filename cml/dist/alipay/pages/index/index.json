@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "fancy-tabs": "./../../components/fancy-tabs/fancy-tabs"
+    },
+    "defaultTitle": "index",
+    "pullRefresh": false,
+    "allowsBounceVertical": "YES",
+    "titleBarColor": "#ffffff"
+}

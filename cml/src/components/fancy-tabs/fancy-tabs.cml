@@ -1,0 +1,52 @@
+<template>
+  <!--fancy-tabs.wxml-->
+  <view class="wrap">
+    <view class="tabs">
+      <slot></slot>
+    </view>
+    <text class="panels" c-bind:tap="click">tab panel</text>
+  </view>
+</template>
+
+<script>
+
+class DemoCom {
+  props = {
+    from: {
+      type: String,
+      default: ''
+    }
+  }
+
+  methods = {
+    click() {
+      this.$cmlEmit('myevent', {
+        from: this.from
+      })
+    }
+  }
+}
+
+export default new DemoCom();
+</script>
+<style>
+/* fancy-tabs.wxss */
+.wrap {
+  flex-direction: column;
+}
+.tabs { 
+  align-self: center;
+}
+
+.panels {
+  color: green;
+  font-size: 24cpx;
+}
+</style>
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {}
+  }
+}
+</script>

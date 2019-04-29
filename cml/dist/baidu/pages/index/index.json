@@ -1,0 +1,12 @@
+{
+    "usingComponents": {
+        "fancy-tabs": "./../../components/fancy-tabs/fancy-tabs"
+    },
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "index",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 50
+}

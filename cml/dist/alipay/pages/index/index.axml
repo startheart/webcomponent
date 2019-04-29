@@ -1,0 +1,5 @@
+<view id="app" class=" cml-base cml-view cml-2ff0c046">
+  <view class=" cml-base cml-view cml-2ff0c046"><fancy-tabs id="fancy-tabs" onTap="_cmlEventProxy" data-eventtap="click" onMyevent="_cmlEventProxy" data-eventmyevent="customEvt" from="pages/index" class=" cml-base cml-fancy-tabs cml-2ff0c046">
+    <text class="text  cml-base cml-text cml-2ff0c046">slot内容</text>
+  </fancy-tabs></view>
+</view>

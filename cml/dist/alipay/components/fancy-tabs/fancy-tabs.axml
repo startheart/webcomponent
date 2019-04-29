@@ -1,0 +1,6 @@
+<view class="wrap  cml-base cml-view cml-4f0dfc6b">
+  <view class="tabs  cml-base cml-view cml-4f0dfc6b">
+    <slot class=" cml-base cml-slot cml-4f0dfc6b"></slot>
+  </view>
+  <text class="panels  cml-base cml-text cml-4f0dfc6b" onTap="_cmlEventProxy" data-eventtap="click">tab panel</text>
+</view>

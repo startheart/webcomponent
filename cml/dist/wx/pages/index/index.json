@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "fancy-tabs": "./../../components/fancy-tabs/fancy-tabs"
+    },
+    "navigationBarTitleText": "index",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+}

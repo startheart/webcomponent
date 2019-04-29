@@ -1,0 +1,80 @@
+<template>
+  <view id="app">
+    <fancy-tabs id="fancy-tabs" c-bind:tap="click" c-bind:myevent="customEvt" from="pages/index">
+      <text class="text">slot内容</text>
+    </fancy-tabs>
+  </view>
+</template>
+
+<script>
+
+class Index  {
+  methods = {
+    click: function(e) {
+      console.log('【<fancy-tabs/> origin click event handler】', e)
+    },
+    customEvt: function(e) {
+      console.log('【<fancy-tabs/> custom event handler】', e)
+    }
+  }
+}
+
+export default new Index();
+
+</script>
+<style>
+
+view {
+  /*会影响Shadow DOM*/
+  display: flex; 
+  font-size: 48cpx;
+}
+.tabs {
+  /*不会影响Shadow DOM*/
+  color: red; 
+  font-size: 36cpx;
+}
+#fancy-tabs {
+  /*会影响Shadow DOM的子项*/
+  display: flex; 
+  flex-direction: column;
+  width: 600cpx;
+  border: 2cpx solid black;
+}
+
+.text {
+  /*会被Shadow DOM继承*/
+  color: red; 
+  font-size: 40cpx;
+}
+
+</style>
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {
+      "fancy-tabs": "/components/fancy-tabs/fancy-tabs"
+    }
+  },
+  "wx": {
+    "navigationBarTitleText": "index",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+  },
+  "alipay": {
+    "defaultTitle": "index",
+    "pullRefresh": false,
+    "allowsBounceVertical": "YES",
+    "titleBarColor": "#ffffff"
+  },
+  "baidu": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "index",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 50
+  }
+}
+</script>
