@@ -75,7 +75,7 @@ customElements.define('fancy-tabs', class extends HTMLElement {
       </div>
     `;
 
-    const panels = shadowRoot.querySelector('#panels');
+    const panels = shadowRoot.querySelector('.panels');
     panels.addEventListener('click', e => {
       panels.dispatchEvent(new Event('myevent', {bubbles: true, composed: true}));
     });
