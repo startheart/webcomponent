@@ -6,7 +6,7 @@
   align-self: center;
 }
 :host {
-  font-weight: 100; /* 作用于宿主元素*/
+  font-weight: 100; /* 无作用*/
 }
 .panels {
   color: green;

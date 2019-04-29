@@ -1,16 +1,20 @@
 view {
+  /*会影响自定义组件*/
   display: flex; 
-  font-size: 24px; /*不会影响Shadow DOM*/
+  font-size: 24px;
 }
 #tabs {
-  color: red; /*不会影响Shadow DOM*/
+  /*不会影响自定义组件*/
+  color: red;
   font-size: 18px;
 }
 #fancy-tabs {
-  display: flex; /*会影响Shadow DOM的子项*/
-  flex-direction: column; /*会影响Shadow DOM的子项*/
+  /*会影响自定义组件的子项*/
+  display: flex; 
+  flex-direction: column;
   width: 400px;
-  color: red; /*会被Shadow DOM继承*/
-  font-size: 20px; /*会被Shadow DOM继承*/
+  /*会被自定义组件继承*/
+  color: red; 
+  font-size: 20px;
   border: 1px solid black;
 }
