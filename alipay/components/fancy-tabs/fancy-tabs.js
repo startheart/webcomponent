@@ -4,7 +4,7 @@ Component({
    * 组件的属性列表
    */
   props: {
-
+    
   },
 
   /**
@@ -19,7 +19,7 @@ Component({
    */
   methods: {
     click(e) {
-      this.props.myevent({
+      this.props.onMyevent({
         content: e
       })
     }
