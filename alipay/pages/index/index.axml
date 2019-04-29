@@ -1,5 +1,5 @@
 <view id="root">
-    <fancy-tabs id="fancy-tabs" onTap="click" onMyevent="customEvt">
+    <fancy-tabs id="fancy-tabs" onTap="click" onMyevent="customEvt" from="pages/index">
         <view>slot内容</view>
     </fancy-tabs>
 </view>

@@ -2,13 +2,13 @@
 .wrap {
   flex-direction: column;
 }
-#tabs { 
+.tabs { 
   align-self: center;
 }
 :host {
   font-weight: 100; /* 作用于宿主元素*/
 }
-#panels {
+.panels {
   color: green;
   font-size: 12px;
 }

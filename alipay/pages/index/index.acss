@@ -2,7 +2,7 @@ view {
   display: flex; 
   font-size: 24px; /*不会影响Shadow DOM*/
 }
-#tabs {
+.tabs {
   color: red; /*不会影响Shadow DOM*/
   font-size: 18px;
 }

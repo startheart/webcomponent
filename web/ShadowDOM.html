@@ -9,7 +9,7 @@
       display: flex; 
       font-size: 24px; /*不会影响Shadow DOM*/
     }
-    #tabs {
+    .tabs {
       color: red; /*不会影响Shadow DOM*/
       font-size: 18px;
     }
@@ -55,23 +55,23 @@ customElements.define('fancy-tabs', class extends HTMLElement {
         .wrap {
           flex-direction: column;
         }
-        #tabs { 
+        .tabs { 
           align-self: center;
         }
         :host {
           font-weight: 100; /* 作用于宿主元素*/
         }
-        #panels {
+        .panels {
           color: green;
           font-size: 12px;
         }
       </style>
       <!-- styles are scoped to fancy-tabs! -->
       <div class="wrap">
-        <div id="tabs">
+        <div class="tabs">
           <slot></slot>
         </div>
-        <div id="panels">tab panel</div>
+        <div class="panels">tab panel</div>
       </div>
     `;
 

@@ -1,5 +1,0 @@
-<view id="root">
-    <fancy-tabs id="fancy-tabs" bindtap="click" bindmyevent="customEvt">
-        <view>slot内容</view>
-    </fancy-tabs>
-</view>
