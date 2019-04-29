@@ -152,7 +152,7 @@ view {
   font-size: 36rpx;
 }
 
-#fancy-tabs {
+.cml-2ff0c046.fancy-tabs {
   /*会影响Shadow DOM的子项*/
   display: -webkit-box;
   display: -webkit-flex;

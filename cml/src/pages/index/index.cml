@@ -1,20 +1,26 @@
 <template>
   <view id="app">
-    <fancy-tabs id="fancy-tabs" c-bind:tap="click" c-bind:myevent="customEvt" from="pages/index">
+    <fancy-tabs class="fancy-tabs" c-bind:tap="click" c-bind:myevent="customEvt" from="pages/index">
       <text class="text">slot内容</text>
     </fancy-tabs>
   </view>
 </template>
 
 <script>
-
+import cml from 'chameleon-api'
 class Index  {
   methods = {
     click: function(e) {
       console.log('【<fancy-tabs/> origin click event handler】', e)
+      cml.alert({
+        message: '<fancy-tabs/> origin click.'
+      })
     },
     customEvt: function(e) {
       console.log('【<fancy-tabs/> custom event handler】', e)
+      cml.alert({
+        message: '<fancy-tabs/> custom event handler.'
+      })
     }
   }
 }
@@ -34,7 +40,7 @@ view {
   color: red; 
   font-size: 36cpx;
 }
-#fancy-tabs {
+.fancy-tabs {
   /*会影响Shadow DOM的子项*/
   display: flex; 
   flex-direction: column;
