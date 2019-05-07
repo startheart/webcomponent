@@ -3,6 +3,6 @@
   <view class="tabs">
     <slot></slot>
   </view>
-  <view class="panels" onTap="click">tab panel</view>
+  <view class="panels" onTap="click">Shadow Root 子项内容</view>
 </view>
 

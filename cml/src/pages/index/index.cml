@@ -1,7 +1,7 @@
 <template>
   <view id="app">
     <fancy-tabs class="fancy-tabs" c-bind:tap="click" c-bind:myevent="customEvt" from="pages/index">
-      <text class="text">slot内容</text>
+      <text class="text">light DOM</text>
     </fancy-tabs>
   </view>
 </template>

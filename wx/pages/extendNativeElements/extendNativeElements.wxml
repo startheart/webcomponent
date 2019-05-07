@@ -1,0 +1,3 @@
+<view id="root">
+    <builtin-button class="blue" style="color:red;" cstyle="background:orange;">Builtin button!</builtin-button>
+</view>

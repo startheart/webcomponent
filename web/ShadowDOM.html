@@ -27,7 +27,7 @@
 <body>
   <div id="root">
       <fancy-tabs id="fancy-tabs">
-        <div>slot内容</div>
+        <div>light DOM</div>
       </fancy-tabs>
   </div>
 <script type="text/javascript" >
@@ -40,6 +40,10 @@ fancyTabs.addEventListener('click', e => {
 // 绑定自定义事件
 fancyTabs.addEventListener('myevent', e => {
   console.log('【<fancy-tabs/> custom event handler】', e)
+});
+
+document.addEventListener('myevent', e => {
+  console.log('【<fancy-tabs/> custom event bubbles to document】', e)
 });
 
 // Use custom elements API v1 to register a new HTML tag and define its JS behavior
@@ -71,13 +75,13 @@ customElements.define('fancy-tabs', class extends HTMLElement {
         <div class="tabs">
           <slot></slot>
         </div>
-        <div class="panels">tab panel</div>
+        <div class="panels">Shadow Root 子项内容</div>
       </div>
     `;
 
     const panels = shadowRoot.querySelector('.panels');
     panels.addEventListener('click', e => {
-      panels.dispatchEvent(new Event('myevent', {bubbles: true, composed: true}));
+      panels.dispatchEvent(new Event('myevent', {bubbles: false, composed: true}));
     });
   }
 });

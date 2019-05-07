@@ -1,0 +1,5 @@
+<!--builtin-button.wxml-->
+<button style="{{cstyle}}">
+  <slot></slot>
+</button>
+

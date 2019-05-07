@@ -3,7 +3,7 @@
     <div class="tabs">
       <slot></slot>
     </div>
-    <text class="panels" @click="click">tab panel</text>
+    <text class="panels" @click="click">Shadow Root 子项内容</text>
   </div>
 </template>
 

@@ -1,5 +1,9 @@
 {
   "usingComponents": {
     "fancy-tabs": "../../components/fancy-tabs/fancy-tabs"
-  }
+  },
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "百度小程序",
+  "backgroundTextStyle": "light"
 }

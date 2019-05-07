@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    .blue {
+        color: blue;
+    }
+  </style>
+  <title>扩展原生标签</title>
+</head>
+<body>
+  <div id="root">
+    <button is="builtin-button" style="background:orange;" class="blue">Builtin button!</button>
+  </div>
+<script type="text/javascript" >
+
+class BuiltinButton extends HTMLButtonElement {
+  constructor() {
+    super();
+    
+    this.addEventListener('click', e => console.log(this.innerText));
+  }
+}
+ 
+customElements.define('builtin-button', BuiltinButton, {extends: 'button'});
+</script>
+</body>
+</html>

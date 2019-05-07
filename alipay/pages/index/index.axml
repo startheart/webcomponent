@@ -1,6 +1,6 @@
 <view id="root">
   <fancy-tabs id="fancy-tabs" onTap="click" onMyevent="customEvt" from="pages/index">
-    <view>slot内容</view>
+    <view>light DOM</view>
     </view>
   </fancy-tabs>
 </view>

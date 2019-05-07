@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "builtin-button": "../../components/builtin-button/builtin-button"
+  }
+}

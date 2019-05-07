@@ -1,6 +1,6 @@
 <template>
   <fancy-tabs id="fancy-tabs" @click.native="click" @myevent="customEvt" from="app.vue">
-    <div>slot内容</div>
+    <div>light DOM</div>
   </fancy-tabs>
 </template>
 
