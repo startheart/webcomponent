@@ -1,0 +1,41 @@
+<template>
+  <div class="wrap">
+    <div class="tabs">
+      <slot></slot>
+    </div>
+    <text class="panels" onclick="click">
+      Shadow Root 子项内容
+    </text>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'FancyTabs',
+  props: {
+    from: String
+  },
+  click() {
+    this.$dispatch('myevent', {
+      from: this.from
+    })
+  }
+}
+</script>
+
+<style>
+/** web 都会被编译写入element.style上**/
+.wrap {
+  flex-direction: column;
+}
+.tabs {
+  align-self: center;
+}
+/* :host {
+  font-weight: 100;
+} */
+.panels {
+  color: green;
+  font-size: 24px;
+}
+</style>

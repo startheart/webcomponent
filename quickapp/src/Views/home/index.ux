@@ -1,0 +1,59 @@
+<import name="fancy-tabs" src="../../Components/fancy-tabs"></import>
+
+<template>
+  <!-- template里只能有一个根节点 -->
+  <div id="demo-page" class="demo-page">
+    <!-- <div class="root"> -->
+      <fancy-tabs class="fancy-tabs" onclick="click" onMyevent="customEvt" from="index.ux">
+        <text>light DOM</text>
+      </fancy-tabs>
+    <!-- <div> -->
+  </div>
+</template>
+
+<script>
+
+export default {
+  // 页面级组件的数据模型，影响传入数据的覆盖机制：private内定义的属性不允许被覆盖
+  private: {
+    title: '示例页面'
+  },
+  click(e) {
+    console.log('【<fancy-tabs/> origin click event handler】', e)
+  },
+  customEvt(e) {
+    console.log('【<fancy-tabs/> custom event handler】', e)
+  }
+}
+</script>
+
+<style>
+#demo-page {
+  /*需要指定高度，否则为屏幕高度*/
+  height: 100px;
+}
+div {
+  /*不会影响自定义组件*/
+  width: 100%;
+}
+text {
+  /*不会影响自定义组件内部*/
+  display: flex; 
+  font-size: 48px;
+}
+.tabs {
+  /*不会影响自定义组件内部*/
+  color: red;
+  font-size: 36px;
+}
+.fancy-tabs {
+  /*id选择器不会作用自定义组件上，且文本相关的样式会去除（color、font-size）*/
+  display: flex; 
+  flex-direction: column;
+  width: 600px;
+  color: red; 
+  font-size: 40px;
+  border: 1px solid black;
+  height: 100px;
+}
+</style>
